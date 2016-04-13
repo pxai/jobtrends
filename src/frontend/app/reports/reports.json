@@ -1,0 +1,20 @@
+[
+    { "id" : 1,
+     "title": "Post S 1",
+     "published": true,
+     "imageUrl" : "img/posts/zits1.PNG",
+      "date":"2015-05-01T13:28:27.879Z",
+     "text": "Fast just got faster with Nexus S."},
+    { "id" : 2,
+      "title": "Post W 2",
+     "published": false,
+     "imageUrl" : "img/posts/zits2.PNG",
+      "date":"2015-05-02T13:28:27.879Z",
+     "text": "The Next, Next Generation tablet."},
+    { "id" : 3,
+      "title": "Post O 3",
+     "published": true,
+     "imageUrl" : "img/posts/zits3.PNG",
+      "date":"2015-05-03T13:28:27.879Z",
+     "text": "The Next, Next Generation tablet."}
+  ]

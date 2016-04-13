@@ -1,0 +1,6 @@
+TBD: detail view for <span>{{report.id}}</span>
+         <h3><a href="#/posts/{{report.id}}">{{report.title}}</a></h3>
+                <i>Published: {{ report.published | isPublished}}</i>
+                <img ng-src="{{report.imageUrl}}"  />
+                    <p>{{report.text}}</p>
+        <i>{{report.date| date:"dd/MM/yyyy - h:mma"}}</i>

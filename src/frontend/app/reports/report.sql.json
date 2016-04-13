@@ -1,0 +1,4 @@
+{
+  "provinces": ["Madrid", "Barcelona", "Bizkaia", "Gipuzkoa", "Nafarroa", "Araba", "Asturias"],
+  "data" : [[38, 29, 30, 51, 16, 25, 41]] 
+}

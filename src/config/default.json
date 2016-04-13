@@ -1,0 +1,5 @@
+{
+	"appName" : "observatorio",
+	"port" : "80",
+	"mongoUrl" : "mongodb://localhost/jobtrends"
+}

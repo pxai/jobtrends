@@ -1,0 +1,25 @@
+    <p>Order criteria: {{orderProp}}</p>
+ <div class="container-fluid">
+  <div class="row">
+    <div>
+        <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Ofertas de empleo por categoría</h3>
+     <canvas id="bar" class="chart chart-bar" data="reportDataCategory.data" legend="true" labels="reportDataCategory.category" options="{scaleLineWidth: 1}"></canvas> 
+    </div>
+    <div>
+        <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Ofertas de empleo por subcategoría</h3>
+     <canvas id="bar" class="chart chart-bar" data="reportDataSubcategory.data" legend="true" labels="reportDataSubcategory.subcategory"></canvas> 
+    </div>
+    <div>
+        <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Ofertas de empleo por autonomías</h3>
+     <canvas id="bar" class="chart chart-bar" data="reportDataAutonomy.data" legend="true" labels="reportDataAutonomy.autonomies"></canvas> 
+    </div>
+    <div>
+        <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Ofertas de empleo por estudios</h3>
+     <canvas id="bar" class="chart chart-bar" data="reportDataStudy.data" legend="true" labels="reportDataStudy.studies"></canvas> 
+      <!--Body content-->
+        {{query}}
+    
+    </div>
+  </div>
+      
+</div>

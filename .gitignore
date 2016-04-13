@@ -1,3 +1,8 @@
+dump/
+node_modules/
+build/
+nbproject/private/
+README.prod
 # Logs
 logs
 *.log

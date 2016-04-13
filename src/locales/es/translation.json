@@ -1,0 +1,19 @@
+{
+  "sample" : "Ejemplo",
+  "app": {
+    "name": "Guestbook",
+    "greet": "Hola",
+    "home": "Inicio",
+    "welcome": "Bienvenido al inicio"
+  },
+  "form-comment": {
+    "welcome": "Bienvenido al guestbook",
+    "name": "Nombre",
+    "guestbook_name_invalid" :"El nombre debe estar entre 2 y 20 caracteres",
+    "guestbook_age_invalid" : "La edad debe estar entre 0 y 99",
+    "guestbook_message_invalid" : "Escribe algo jambo",
+     "age" : "Edad",
+    "message": "Mensaje",
+    "submit": "Enviar"
+  }
+}

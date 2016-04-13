@@ -1,0 +1,11 @@
+    <h3>Habilidades más requeridas por sector</h3>
+ <div class="container-fluid">
+  <div class="row">
+      <div ng-repeat="skill in skillData">
+          <h4>{{skill.category}}</h4>
+         <canvas id="bar" legend="true" class="chart chart-bar" data="skill.data"
+            labels="skill.labels"> </canvas>
+          </div>
+          <hr />
+    </div>
+  </div>

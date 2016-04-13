@@ -1,0 +1,12 @@
+    <h3>Perfiles demandados por sectores</h3>
+ <div class="container-fluid">
+  <div class="row">
+      <div ng-repeat="sector in sectorData">
+          <h4>{{sector.category}}</h4>
+        <canvas id="polar-area" legend="true" class="chart chart-polar-area" data="sector.data"
+            labels="sector.labels"></canvas> 
+          </div>
+          <hr />
+    </div>
+  </div>
+
