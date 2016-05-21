@@ -16,7 +16,7 @@
     "grunt-exec": "^0.4.5",
     "grunt-hashres": "^0.4.1",
     "grunt-lint-pattern": "^0.1.4",
-    "mocha": "~1.20.1"
+    "mocha": "~1.20.1",
     "csslint": "^0.10.0",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-concat": "^0.5.1",
@@ -25,9 +25,8 @@
     "grunt-contrib-htmlmin": "^1.0.0",
     "grunt-html": "^5.0.1",
     "grunt-processhtml": "^0.3.13"
-  }
-
   },
+
   "repository": {
     "type": "git",
     "url": "http://pxai@github.com/jobtrends.git"
