@@ -8,23 +8,24 @@
     "start": "cd src && node app.js"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "csslint": "^0.10.0",
     "grunt": "^0.4.5",
     "grunt-cafe-mocha": "^0.1.12",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-less": "^0.11.3",
-    "grunt-contrib-uglify": "^0.5.1",
-    "grunt-exec": "^0.4.5",
-    "grunt-hashres": "^0.4.1",
-    "grunt-lint-pattern": "^0.1.4",
-    "mocha": "~1.20.1",
-    "csslint": "^0.10.0",
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-csslint": "^0.5.0",
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-htmlmin": "^1.0.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.11.3",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-exec": "^0.4.5",
+    "grunt-hashres": "^0.4.1",
     "grunt-html": "^5.0.1",
-    "grunt-processhtml": "^0.3.13"
+    "grunt-lint-pattern": "^0.1.4",
+    "grunt-processhtml": "^0.3.13",
+    "mocha": "^2.4.5"
   },
   "repository": {
     "type": "git",
