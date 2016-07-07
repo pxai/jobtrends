@@ -18,19 +18,19 @@ function makeRequest () {
   var req = http.request(options, function(res) {
     console.log('STATUS: ' + res.statusCode);
     console.log('HEADERS: ' + JSON.stringify(res.headers));
-    //res.setEncoding('iso-8859-1');
+    res.setEncoding('binary');
     res.on('data', function (chunk) {
       data += chunk;
       console.log('BODY: ' + chunk);
     });
     res.on('end', function (err) {
-      console.log('ENDED: ');
-      fs.writeFile('/tmp/message.txt', data, function (err) {
-        if (err) throw err;
-          console.log('It\'s saved!' + data.length);
+      console.log('ENDED: ' +  data);
+      //fs.writeFile('/tmp/message.txt', data, function (err) {
+       // if (err) throw err;
+         // console.log('It\'s saved!' + data.length);
           //function puts(error, stdout, stderr) { sys.puts(stdout) }
           //exec("iconv", puts);
-        });
+     //   });
     });
   });
 
