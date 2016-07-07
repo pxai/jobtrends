@@ -18,7 +18,7 @@ infojobsOptions.headers['Content-Length'] = postData.length;
 var req = http.request(infojobsOptions, function(res) {
   console.log('STATUS: ' + res.statusCode);
   console.log('HEADERS: ' + JSON.stringify(res.headers));
-  res.setEncoding('utf8');
+  res.setEncoding('binary');
   var links = [];
   var data = '';
   res.on('data', function (chunk) {

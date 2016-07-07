@@ -24,7 +24,7 @@ function makeRequest (page) {
   var req = http.request(options, function(res) {
     console.log('STATUS: ' + res.statusCode);
     console.log('HEADERS: ' + JSON.stringify(res.headers));
-    res.setEncoding('utf8');
+    res.setEncoding('binary');
 
     var data = '';
     res.on('data', function (chunk) {
