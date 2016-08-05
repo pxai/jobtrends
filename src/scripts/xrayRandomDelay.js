@@ -10,12 +10,12 @@ mongoose.connect('mongodb://localhost/jobtrends');
 /*
 // This works
 x('http://google.com', 'title')(function(err, title) {
-  console.log(title) // Google 
+  console.log(title) // Google
 });
 */
 var total = 0;
 var page = 1;
-var urlSite = 'http://www.infojobs.net/ofertas-trabajo/';
+var urlSite = 'https://www.infojobs.net/ofertas-trabajo/';
 
 /**
  * scraps one Page and get 20 items
@@ -24,7 +24,7 @@ exports.scrapPage = function (page) {
      // Return a new promise.
      // https://developers.google.com/web/fundamentals/primers/promises/?hl=en
      // Followet XMLHttpRequest
-  return new Promise(function(resolve, reject) {      
+  return new Promise(function(resolve, reject) {
         x(urlSite + page, {
             items: x('.item', [{
             a: '.item a@href',
@@ -40,8 +40,11 @@ exports.scrapPage = function (page) {
                         offers.push(obj.items[i]);
                     }
                 }
+            } else {
+              console.log('Obj void');
+              console.log(obj);
             }
-            
+
             // Resolve promise
             if (offers.length > 0) {
                 resolve(offers);
@@ -49,15 +52,15 @@ exports.scrapPage = function (page) {
                 reject(Error('Offers not found in ' + urlSite + page));
             }
         });
-        
-        
+
+
   });
 }
 /**
  * saves an offer
  */
 exports.saveOffer = function  (offerObject) {
-    
+
      return new Promise(function(resolve, reject) {
 
                 var offer = new Offer({
@@ -66,20 +69,20 @@ exports.saveOffer = function  (offerObject) {
                             body: '',
                             date: Date.now()
                         });
-             
+
                 console.log(offerObject);
-                
+
                     //    offer.save(function (err, offer) {
-               Offer.findOneAndUpdate({url:offerObject.a},offerObject,{upsert: true, 'new': true},function (err, offer) {                                
-               // offer.save(function (err, offer) {                
+               Offer.findOneAndUpdate({url:offerObject.a},offerObject,{upsert: true, 'new': true},function (err, offer) {
+               // offer.save(function (err, offer) {
                     if (err) {
                         reject(Error('Offers not found in ' + page));
                     } else {
                         console.log('Saving: ' + offer);
                         resolve(offer);
                     }
-                });         
-              
+                });
+
      });
 }
 
@@ -93,30 +96,25 @@ exports.inc = function (num) {
                 resolve(num + 1);
         }, dl);
   });
-  
+
 }
 
 
 function saveOffers (offers) {
    // promise.all is a builtin function
    console.log('Lets save offers ' + offers.length);
-  return Promise.all(offers.map(exports.saveOffer));    
+  return Promise.all(offers.map(exports.saveOffer));
 }
-var len = 4020;
+var len = 20;
 var n = 0;
 
 exports.inc(0).then(function repeat(n) {
    console.log('Ok, number is: ' + n);
-    if (n < len) {              
+    if (n < len) {
         return exports.inc(n).then(exports.scrapPage(n).then(
                 function (offers) {
                     return saveOffers(offers);
-                }            
+                }
         )).then(repeat);
-    } 
+    }
 });
-
-
-
-
-

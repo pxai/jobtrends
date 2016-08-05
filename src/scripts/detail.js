@@ -4,18 +4,19 @@ var cheerio = require('cheerio');
 var infojobsFields = require('./infojobsFields');
 var job = require('./jobOffer');
 var mongoose = require('mongoose');
-var offers = require('./models/offer');
+var offers = require('../models/offer');
 var OfferModel = mongoose.model('Offer');
+mongoose.connect('mongodb://127.0.0.1/jobtrends');
 var id = 2000;
 var descending = id;
-      
+
     // Offer.find({'position':null}, {},{}, function (err, offer) {
      OfferModel.find({'position':null}, function (err, allOffers) {
             if (err) {
                 console.err('{"msg":"No data","errors": {}}}');
                 return;
             }
-            
+
             allOffers.forEach(function (oneOffer, i) {
 
               //continue;
@@ -24,7 +25,7 @@ var descending = id;
                   var offer = new job.JobOffer('infojobs');
                   console.log("Got response: " + res.statusCode + oneOffer.url);
                   var content;
-                  res.setEncoding('utf8');
+                  res.setEncoding('binary');
 
                   res.on('data', function (data) {
                     content += data;
@@ -89,7 +90,7 @@ var descending = id;
                                   break;
                         case 'unspecified':
                                   //console.log(key +': ');
-                                  //console.log(html( value.title ).next(value.selector).text());        
+                                  //console.log(html( value.title ).next(value.selector).text());
                                   offer[key] = html( value.title ).next(value.selector).text();
                                   offerModel[key] = html( value.title ).next(value.selector).text();
                                   break;
@@ -99,9 +100,9 @@ var descending = id;
                     });
 //                      console.log(offer );
 //                      console.log(offerModel);
-		      //offerModel = offerModel.toString(); 
+		      //offerModel = offerModel.toString();
 
-	                offerModel = offerModel.toObject(); 
+	                offerModel = offerModel.toObject();
 	                delete offerModel._id;
 
                       console.log(oneOffer._id + ': ' + oneOffer.url);
