@@ -15,7 +15,7 @@ x('http://google.com', 'title')(function(err, title) {
 */
 var total = 0;
 var page = 1;
-var urlSite = 'https://www.infojobs.net/ofertas-trabajo/';
+var urlSite = 'http://www.infojobs.net/ofertas-trabajo/';
 
 /**
  * scraps one Page and get 20 items
@@ -26,12 +26,13 @@ exports.scrapPage = function (page) {
      // Followet XMLHttpRequest
   return new Promise(function(resolve, reject) {
         x(urlSite + page, {
-            items: x('.item', [{
-            a: '.item a@href',
-            job_title: '.item a'
+            items: x('.lines-2', [{
+            a: '.lines-2 a@href',
+            job_title: '.lines-2 a@title'
         }])
         })(function(err, obj) {
             console.log('Page: ' + page);
+                          console.log(obj);
             var offers = [];
             if (obj != undefined && obj.items != undefined) {
                 for (var i = 0; i < obj.items.length;i++) {

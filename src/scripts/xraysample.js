@@ -4,11 +4,11 @@ var mongoose = require('mongoose');
 var offers = require('../models/offer');
 var Offer = mongoose.model('Offer');
 mongoose.connect('mongodb://localhost/jobtrends');
-  
+
 /*
 // This works
 x('http://google.com', 'title')(function(err, title) {
-  console.log(title) // Google 
+  console.log(title) // Google
 });
 */
 var total = 0;
@@ -18,9 +18,9 @@ var urlSite = 'http://www.infojobs.net/ofertas-trabajo/';
 
 for (var page = 1; page < 4; page++) {
     x(urlSite + page, {
-        items: x('.item', [{
-        a: '.item a@href',
-        job_title: '.item a'
+      items: x('.lines-2', [{
+      a: '.lines-2 a@href',
+      job_title: '.lines-2 a@title'
     }])
     })(function(err, obj) {
         console.log('Page: ' + page);
@@ -35,7 +35,7 @@ for (var page = 1; page < 4; page++) {
                         body: '',
                         date: Date.now()
                     });
-                    
+
                 console.log(offer);
                 offer.save(function (err, offer) {
                     if (err) {
@@ -43,7 +43,7 @@ for (var page = 1; page < 4; page++) {
                         return;
                     }
                     console.log('Saving: ' + offer);
-                }); // save        
+                }); // save
                 }
             }
         }
