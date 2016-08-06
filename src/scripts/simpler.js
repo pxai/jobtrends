@@ -1,15 +1,18 @@
 var request = require('request');
 var fs = require('fs');
+
+
+// USING REQUEST
 request( {
-    // will be ignored 
+    // will be ignored
     method: 'GET',
-    uri: 'htp://www.infojobs.net', 
+    uri: 'htp://www.infojobs.net',
     encoding: 'windows-1252'
 	},
 	function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
 	  		console.log('Ok,done');
-	    	//console.log(body) // Show the HTML for the Google homepage. 
+	    	//console.log(body) // Show the HTML for the Google homepage.
 	    	fs.writeFile('/tmp/message.txt', body, function (err) {
 	        if (err) throw err;
 	          console.log('It\'s saved!' + body.length);
