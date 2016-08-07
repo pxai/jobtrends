@@ -50,6 +50,8 @@
     "i18next": "^1.10.6",
     "mongoose": "^4.0.8",
     "mongoose-session": "0.0.4",
+    "phantom": "^2.1.14",
+    "phantomjs": "^2.1.7",
     "request": "^2.74.0",
     "sanitize-html": "^1.11.4",
     "x-ray": "^2.3.0"
