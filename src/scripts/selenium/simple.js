@@ -5,8 +5,8 @@ var webdriver = require('selenium-webdriver'),
     until = webdriver.until;
 
 var driver = new webdriver.Builder()
-    .forBrowser('chrome')  // Works executed from project root
-//    .forBrowser('firefox')
+//    .forBrowser('chrome')  // Works executed from project root
+    .forBrowser('firefox') // https://github.com/mozilla/geckodriver/releases
     .build();
 
 driver.get('http://www.infojobs.net');

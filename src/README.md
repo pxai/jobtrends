@@ -13,3 +13,6 @@ The obvious stuff:
   * i18n
   * Session control
   * captcha
+
+Gecko-drvier:
+https://github.com/mozilla/geckodriver/releases
