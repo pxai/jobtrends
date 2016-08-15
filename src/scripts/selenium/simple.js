@@ -1,9 +1,11 @@
 // google_search.js
+// export PATH=${PATH}:node_modules/.bin
 var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     until = webdriver.until;
 
 var driver = new webdriver.Builder()
+//    .forBrowser('chrome')  // Works executed from project root
     .forBrowser('firefox')
     .build();
 
