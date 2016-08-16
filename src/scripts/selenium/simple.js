@@ -9,8 +9,13 @@ var driver = new webdriver.Builder()
     .forBrowser('firefox') // https://github.com/mozilla/geckodriver/releases
     .build();
 
-driver.get('http://www.infojobs.net');
+console.log('Soy cojonudo');
+
+driver.get('http://www.infojobs.net/ofertas-trabajo/1');
 //driver.findElement(By.name('q')).sendKeys('webdriver');
 //driver.findElement(By.name('btnG')).click();
-driver.wait(until.titleIs('InfoJobs - Bolsa de trabajo, ofertas de empleo'), 1000);
+var title = driver.findElements(webdriver.By.css('h2.job-list-title'));
+driver.wait(until.titleIs('Ofertas de trabajo, Buscar trabajo, Bolsa de trabajo - Infojobs'), 1000);
 driver.quit();
+
+console.log(title);
