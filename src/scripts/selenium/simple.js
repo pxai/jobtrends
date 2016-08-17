@@ -14,8 +14,11 @@ console.log('Soy cojonudo');
 driver.get('http://www.infojobs.net/ofertas-trabajo/1');
 //driver.findElement(By.name('q')).sendKeys('webdriver');
 //driver.findElement(By.name('btnG')).click();
-var title = driver.findElements(webdriver.By.css('h2.job-list-title'));
+var offers = driver.wait(until.elementLocated(webdriver.By.css('h2.job-list-title')), 5000);
+driver.findElements(webdriver.By.css('h2.job-list-title'));
+//var offer = driver.findElement(webdriver.By.css('li#of_c8560c8b6247c981456e13e33bf3e4')).getText();
 driver.wait(until.titleIs('Ofertas de trabajo, Buscar trabajo, Bolsa de trabajo - Infojobs'), 1000);
 driver.quit();
-
-console.log(title);
+//console.log(title);
+console.log('-------------------');
+console.log(offers);
