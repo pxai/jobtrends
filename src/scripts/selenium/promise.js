@@ -29,19 +29,31 @@ var result = browser.wait(until.elementsLocated(webdriver.By.css('h2.job-list-ti
     console.log(error);
 });*/
 
-result.then(function (res) {
+/*result.then(function (res) {
    console.log(res); 
    console.log('Ok, result is: ' + res.length);
    //res[0].then(function (val) { console.log(val);});
-   return Promise.all(res);
+  return Promise.all(res.map(log));
 }, function (error) {
     console.log(error);
 }).then(function (elements) {
     console.log('Elements are here');
     console.log(elements);
+});*/
+var titles = [];
+
+result.then(function (res) {
+    return Promise.all(res.map(log)).then(element => {
+        console.log(element)
+    });
 });
 
 //browser.wait(until.titleIs('Ofertas de trabajo, Buscar trabajo, Bolsa de trabajo - Infojobs'), 1000);
 browser.quit();
 //console.log(title);
 console.log('-------------------');
+
+function log (element) {
+  // Return a new promise.
+  return element.getAttribute('href');  
+}

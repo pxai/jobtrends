@@ -18,9 +18,9 @@ var urlSite = 'http://www.infojobs.net/ofertas-trabajo/';
 
 for (var page = 1; page < 4; page++) {
     x(urlSite + page, {
-      items: x('.lines-2', [{
-      a: '.lines-2 a@href',
-      job_title: '.lines-2 a@title'
+      items: x('h2.job-list-title', [{
+      a: 'h2.job-list-title a@href',
+      job_title: 'h2.job-list-title a@title'
     }])
     })(function(err, obj) {
         console.log('Page: ' + page);
