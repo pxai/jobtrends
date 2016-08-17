@@ -16,3 +16,5 @@ The obvious stuff:
 
 Gecko-drvier:
 https://github.com/mozilla/geckodriver/releases
+
+(Selenium JS API)[http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/]

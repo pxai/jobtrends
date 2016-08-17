@@ -17,13 +17,10 @@ browser.get('http://www.infojobs.net/ofertas-trabajo/1');
 
 //var offers = browser.wait(until.elementLocated(webdriver.By.css('h2.job-list-title')), 5000);
 // The same
-var result = browser.wait(until.elementsLocated(webdriver.By.css('h2.job-list-title')));
+var result = browser.wait(until.elementsLocated(webdriver.By.css('h2.job-list-title a')));
 //var offer = driver.findElement(webdriver.By.css('li#of_c8560c8b6247c981456e13e33bf3e4')).getText();
 
-//browser.wait(until.titleIs('Ofertas de trabajo, Buscar trabajo, Bolsa de trabajo - Infojobs'), 1000);
-browser.quit();
-//console.log(title);
-console.log('-------------------');
+
 
 /*Promise.resolve(offers).then(function (res) {
    console.log('Ok, mesg is: ');
@@ -35,6 +32,16 @@ console.log('-------------------');
 result.then(function (res) {
    console.log(res); 
    console.log('Ok, result is: ' + res.length);
+   //res[0].then(function (val) { console.log(val);});
+   return Promise.all(res);
 }, function (error) {
     console.log(error);
+}).then(function (elements) {
+    console.log('Elements are here');
+    console.log(elements);
 });
+
+//browser.wait(until.titleIs('Ofertas de trabajo, Buscar trabajo, Bolsa de trabajo - Infojobs'), 1000);
+browser.quit();
+//console.log(title);
+console.log('-------------------');
