@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var offers = require('../models/offer');
 var OfferModel = mongoose.model('Offer');
 mongoose.connect('mongodb://127.0.0.1/jobtrends');
-var id = 2000;
+var id = 1;
 var descending = id;
 
     // Offer.find({'position':null}, {},{}, function (err, offer) {
@@ -34,6 +34,7 @@ var descending = id;
 
                   res.on('end', function (data) {
                     try {
+                        console.log(content);
                       var html = cheerio.load(content);
                     } catch (ex) {
                         console.log(ex);
@@ -99,7 +100,7 @@ var descending = id;
 
                     });
 //                      console.log(offer );
-//                      console.log(offerModel);
+                      console.log(offerModel);
 		      //offerModel = offerModel.toString();
 
 	                offerModel = offerModel.toObject();

@@ -54,4 +54,12 @@ To be up-to-date
 git pull
 In the simplest terms, git pull does a git fetch followed by a git merge
 
+Scripts
+=======
+Grab urls
+src/scripts/selenium/promiseMongo.js
+
+Grab details
+src/scripts/detail.js
+with infojobsFields.js selectors
 
