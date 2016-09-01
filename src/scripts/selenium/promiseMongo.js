@@ -10,8 +10,8 @@ var webdriver = require('selenium-webdriver'),
     until = webdriver.until;
 
 var browser = new webdriver.Builder()
-//    .forBrowser('chrome')  // Works executed from project root
-    .forBrowser('firefox') // https://github.com/mozilla/geckodriver/releases
+    .forBrowser('chrome')  // Works executed from project root
+//    .forBrowser('firefox') // https://github.com/mozilla/geckodriver/releases
     .build();
 
 var page = process.argv[2] || 1;

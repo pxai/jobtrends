@@ -6,6 +6,7 @@ echo Starting from $START to $END
 
 for (( i=$START; i<=$END; i++ ))
 do 
+    sleep 5
     node src/scripts/selenium/promiseMongo.js ${i}; 
 done
 
