@@ -6,7 +6,6 @@
  */
 var mongoose = require('mongoose');
 
-
     var guestbookSchema = {
         name: { type: String, required: true, validate: [validateText, 'form-comment.guestbook_name_invalid']},
         age: { type: Number, required: true, min: [0, 'form-comment.guestbook_age_invalid'], max: 99 },

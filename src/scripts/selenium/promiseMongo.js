@@ -10,7 +10,7 @@ var webdriver = require('selenium-webdriver'),
     until = webdriver.until;
 
 var browser = new webdriver.Builder()
-    .forBrowser('chrome')  // Works executed from project root
+    .forBrowser('firefox')  // Works executed from project root
 //    .forBrowser('firefox') // https://github.com/mozilla/geckodriver/releases
     .build();
 
@@ -25,7 +25,7 @@ browser.wait(until.elementsLocated(webdriver.By.css('h2.job-list-title a'))).the
             return Promise.all(elements.map(exports.saveOffer)).then(
                 e => { mongoose.disconnect(); }
             );
-        }        
+        }
     ).then(console.log('Done here...')).then(browser.quit());
 });
 
@@ -36,7 +36,7 @@ console.log('-------------------');
 
 function log (element) {
   // Return a new promise.
-  return element.getAttribute('href');  
+  return element.getAttribute('href');
 }
 
 exports.saveOffer = function  (offerUrl) {

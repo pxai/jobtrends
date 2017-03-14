@@ -3,12 +3,12 @@ var http = require('http');
 var querystring = require('querystring');
 var cheerio = require('cheerio');
 var mongoose = require('mongoose');
-var offers = require('./models/offer');
+var offers = require('../models/offer');
 var finished = false;
 var Offer = mongoose.model('Offer');
 
-var infojobsPost = require('./crawler/parameters/infojobs');
-var infojobsOptions = require('./crawler/options/infojobs');
+var infojobsPost = require('../crawler/parameters/infojobs');
+var infojobsOptions = require('../crawler/options/infojobs');
 var i = 1;
 
 function makeRequest (page) {
