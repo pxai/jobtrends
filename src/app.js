@@ -50,7 +50,7 @@ routes(app);
 
 // We set static content
 app.use(express.static('public'));
-
+config.port = process.env.PORT || config.port || 3000;
 console.log(config);
 // And there we go, listening on port 3000
 app.listen(config.port, function () {
