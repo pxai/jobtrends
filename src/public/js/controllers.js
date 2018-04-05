@@ -4,7 +4,7 @@
 
 var jobCuatrovientosControllers = angular.module('jobCuatrovientosControllers', ['chart.js']);
 
-jobCuatrovientosControllers.controller('JobCuatrovientosListCtrl', ['$scope', 'Reports', 'ReportCategory','ReportSubcategory','ReportStudy','ReportAutonomy', 
+jobCuatrovientosControllers.controller('JobCuatrovientosListCtrl', ['$scope', 'Reports', 'ReportCategory','ReportSubcategory','ReportStudy','ReportAutonomy',
     function($scope, Reports, ReportCategory, ReportSubcategory, ReportStudy, ReportAutonomy) {
 
         $scope.orderProp = 'date';
@@ -29,7 +29,7 @@ jobCuatrovientosControllers.controller('JobCuatrovientosDetailCtrl', ['$scope', 
   }]);
 
 
-jobCuatrovientosControllers.controller('JobCuatrovientosAboutCtrl', ['$scope', 
+jobCuatrovientosControllers.controller('JobCuatrovientosAboutCtrl', ['$scope',
     function($scope) {
-        $scope.title = '2015 - Cuatrovientos Centro Integrado';
+        $scope.title = '2015 - 2018 - pello.io';
   }]);
