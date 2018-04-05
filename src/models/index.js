@@ -8,7 +8,7 @@
  */
 var mongoose = require('mongoose');
 var config = require('config');
-config.mongoUrl = process.env.MONGOURL || config.mongoUrl;
+config.mongoUrl = process.env.MONGOURL  || config.mongoUrl;
 mongoose.connect(config.mongoUrl);
 
 // optionally:
