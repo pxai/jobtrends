@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "test": "mocha",
-    "start": "node_modules/.bin/http-server",
+    "start": "cd src && node app",
     "post-install": "./node_modules/.bin/webdriver-manager update",
     "selenium": "./node_modules/.bin/webdriver-manager start"
   },

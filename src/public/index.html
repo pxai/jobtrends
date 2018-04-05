@@ -1,10 +1,8 @@
 <!doctype html>
-<!--Hola, antes de que empieces a criticar esta evidente falta de optimización
-pregúntame por qué no he podido aplicarla -->
 <html lang="en" ng-app="jobCuatrovientosApp">
 <head>
   <meta charset="utf-8">
-  <title ng-bind-template="Job Cuatrovientos {{query}}">Empleo Cuatrovientos</title>
+  <title ng-bind-template="Job Cuatrovientos {{query}}">JobTrends</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/app.css">
@@ -43,7 +41,7 @@ pregúntame por qué no he podido aplicarla -->
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#/"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> observatorio.cuatrovientos.org</a>
+          <a class="navbar-brand" href="#/"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> jobtrends.pello.io</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse navbar-right">
             <form name="searchForm" class="navbar-form navbar-left" role="search" ng-controller="JobCuatrovientosSearchCtrl">
@@ -54,8 +52,8 @@ pregúntame por qué no he podido aplicarla -->
       </form>
           <ul class="nav navbar-nav  navbar-right">
             <li class="active"><a href="#/reports/sector/example"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Sector</a></li>
-            <li class="active"><a href="#/reports/skill/example"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Requisitos</a></li>
-            <li><a href="#/about"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Acerca de</a></li>
+            <li class="active"><a href="#/reports/skill/example"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Skills</a></li>
+            <li><a href="#/about"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>  About</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -72,15 +70,15 @@ pregúntame por qué no he podido aplicarla -->
                 <option value="date">By date</option>
               </select -->
         </div>
-        <h1>Observatorio Cuatrovientos</h1>
-            <div class="input-group"  ng-controller="JobCuatrovientosSearchCtrl">
+        <h1>jobtrends.pello.io</h1>
+            <div class="input-group "  ng-controller="JobCuatrovientosSearchCtrl">
                        <input type="text" ng-model="query" class="form-control" placeholder="Ej: Madrid, Ej: Java">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button" ng-bind="searchTerm" ng-click="search()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                            <button class="btn btn-default" type="button" ng-click="search()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                        </span>
                   </div>
                      <!-- /input-group -->
-                 <p class="lead">Demanda de empleo</p>
+                 <p class="lead">Job Offers</p>
                  <p class="lead">
                      <i ng-model="searchResults"></i>
                  <div class="view-container">
@@ -95,7 +93,7 @@ pregúntame por qué no he podido aplicarla -->
 
 
 
-    
-    
+
+
 </body>
 </html>
